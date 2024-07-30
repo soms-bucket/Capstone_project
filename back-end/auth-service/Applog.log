@@ -1,5 +1,0 @@
-org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver-[WARN]- 2024-07-30 00:05:41,328-Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]-
-org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-[INFO]- 2024-07-30 01:31:13,775-Application shutdown requested.-
-org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-[INFO]- 2024-07-30 01:31:13,874-Closing JPA EntityManagerFactory for persistence unit 'default'-
-com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-30 01:31:13,911-HikariPool-1 - Shutdown initiated...-
-com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-30 01:31:13,930-HikariPool-1 - Shutdown completed.-
