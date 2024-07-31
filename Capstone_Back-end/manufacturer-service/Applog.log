@@ -1,0 +1,68 @@
+org.springframework.cloud.config.client.ConfigServicePropertySourceLocator-[INFO]- 2024-07-31 02:55:10,318-Fetching config from server at : http://localhost:6000-
+org.springframework.cloud.config.client.ConfigServicePropertySourceLocator-[INFO]- 2024-07-31 02:55:11,414-Located environment: name=manufacturer-service, profiles=[default], label=null, version=5437bb7eabeee518befbd0fda6836211282e3913, state=null-
+org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration-[INFO]- 2024-07-31 02:55:11,416-Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/Smiley-tejasri/Spring_cloud_Config/application.properties'}]-
+com.example.demo.DemoApplication-[INFO]- 2024-07-31 02:55:11,445-No active profile set, falling back to 1 default profile: "default"-
+org.springframework.data.repository.config.RepositoryConfigurationDelegate-[INFO]- 2024-07-31 02:55:12,825-Bootstrapping Spring Data JPA repositories in DEFAULT mode.-
+org.springframework.data.repository.config.RepositoryConfigurationDelegate-[INFO]- 2024-07-31 02:55:12,905-Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.-
+org.springframework.cloud.context.scope.GenericScope-[INFO]- 2024-07-31 02:55:13,443-BeanFactory id=deb6b0e2-86c3-382e-bdfb-b0df56143b5c-
+org.springframework.boot.web.embedded.tomcat.TomcatWebServer-[INFO]- 2024-07-31 02:55:14,595-Tomcat initialized with port 9192 (http)-
+org.apache.catalina.core.StandardService-[INFO]- 2024-07-31 02:55:14,629-Starting service [Tomcat]-
+org.apache.catalina.core.StandardEngine-[INFO]- 2024-07-31 02:55:14,629-Starting Servlet engine: [Apache Tomcat/10.1.26]-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 02:55:14,748-Initializing Spring embedded WebApplicationContext-
+org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-[INFO]- 2024-07-31 02:55:14,750-Root WebApplicationContext: initialization completed in 3272 ms-
+org.hibernate.jpa.internal.util.LogHelper-[INFO]- 2024-07-31 02:55:15,151-HHH000204: Processing PersistenceUnitInfo [name: default]-
+org.hibernate.Version-[INFO]- 2024-07-31 02:55:15,302-HHH000412: Hibernate ORM core version 6.5.2.Final-
+org.hibernate.cache.internal.RegionFactoryInitiator-[INFO]- 2024-07-31 02:55:15,389-HHH000026: Second-level cache disabled-
+org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-[INFO]- 2024-07-31 02:55:15,918-No LoadTimeWeaver setup: ignoring JPA class transformer-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 02:55:15,973-HikariPool-1 - Starting...-
+com.zaxxer.hikari.pool.HikariPool-[INFO]- 2024-07-31 02:55:16,424-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62a00f1e-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 02:55:16,427-HikariPool-1 - Start completed.-
+org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-[INFO]- 2024-07-31 02:55:18,325-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)-
+org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-[INFO]- 2024-07-31 02:55:18,488-Initialized JPA EntityManagerFactory for persistence unit 'default'-
+org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-[WARN]- 2024-07-31 02:55:19,316-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning-
+org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-[WARN]- 2024-07-31 02:55:19,486-Unable to start LiveReload server-
+org.springframework.boot.web.embedded.tomcat.TomcatWebServer-[INFO]- 2024-07-31 02:55:22,693-Tomcat started on port 9192 (http) with context path '/'-
+com.example.demo.DemoApplication-[INFO]- 2024-07-31 02:55:22,942-Started DemoApplication in 14.594 seconds (process running for 15.904)-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 03:00:55,522-Initializing Spring DispatcherServlet 'dispatcherServlet'-
+org.springframework.web.servlet.DispatcherServlet-[INFO]- 2024-07-31 03:00:55,523-Initializing Servlet 'dispatcherServlet'-
+org.springframework.web.servlet.DispatcherServlet-[INFO]- 2024-07-31 03:00:55,527-Completed initialization in 4 ms-
+org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-[INFO]- 2024-07-31 03:10:19,475-Application shutdown requested.-
+org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-[INFO]- 2024-07-31 03:10:19,555-Closing JPA EntityManagerFactory for persistence unit 'default'-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 03:10:19,562-HikariPool-1 - Shutdown initiated...-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 03:10:19,583-HikariPool-1 - Shutdown completed.-
+org.apache.catalina.core.StandardService-[INFO]- 2024-07-31 03:10:19,585-Stopping service [Tomcat]-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 03:10:19,588-Destroying Spring FrameworkServlet 'dispatcherServlet'-
+org.springframework.cloud.config.client.ConfigServicePropertySourceLocator-[INFO]- 2024-07-31 09:32:51,686-Fetching config from server at : http://localhost:6000-
+org.springframework.cloud.config.client.ConfigServicePropertySourceLocator-[INFO]- 2024-07-31 09:32:52,944-Located environment: name=manufacturer-service, profiles=[default], label=null, version=5437bb7eabeee518befbd0fda6836211282e3913, state=null-
+org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration-[INFO]- 2024-07-31 09:32:52,946-Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/Smiley-tejasri/Spring_cloud_Config/application.properties'}]-
+com.example.demo.DemoApplication-[INFO]- 2024-07-31 09:32:52,975-No active profile set, falling back to 1 default profile: "default"-
+org.springframework.data.repository.config.RepositoryConfigurationDelegate-[INFO]- 2024-07-31 09:32:54,119-Bootstrapping Spring Data JPA repositories in DEFAULT mode.-
+org.springframework.data.repository.config.RepositoryConfigurationDelegate-[INFO]- 2024-07-31 09:32:54,184-Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.-
+org.springframework.cloud.context.scope.GenericScope-[INFO]- 2024-07-31 09:32:54,563-BeanFactory id=deb6b0e2-86c3-382e-bdfb-b0df56143b5c-
+org.springframework.boot.web.embedded.tomcat.TomcatWebServer-[INFO]- 2024-07-31 09:32:55,713-Tomcat initialized with port 9192 (http)-
+org.apache.catalina.core.StandardService-[INFO]- 2024-07-31 09:32:55,739-Starting service [Tomcat]-
+org.apache.catalina.core.StandardEngine-[INFO]- 2024-07-31 09:32:55,740-Starting Servlet engine: [Apache Tomcat/10.1.26]-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 09:32:55,851-Initializing Spring embedded WebApplicationContext-
+org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-[INFO]- 2024-07-31 09:32:55,853-Root WebApplicationContext: initialization completed in 2853 ms-
+org.hibernate.jpa.internal.util.LogHelper-[INFO]- 2024-07-31 09:32:56,204-HHH000204: Processing PersistenceUnitInfo [name: default]-
+org.hibernate.Version-[INFO]- 2024-07-31 09:32:56,299-HHH000412: Hibernate ORM core version 6.5.2.Final-
+org.hibernate.cache.internal.RegionFactoryInitiator-[INFO]- 2024-07-31 09:32:56,369-HHH000026: Second-level cache disabled-
+org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-[INFO]- 2024-07-31 09:32:56,827-No LoadTimeWeaver setup: ignoring JPA class transformer-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 09:32:56,879-HikariPool-1 - Starting...-
+com.zaxxer.hikari.pool.HikariPool-[INFO]- 2024-07-31 09:32:57,626-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27ba1089-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 09:32:57,631-HikariPool-1 - Start completed.-
+org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-[INFO]- 2024-07-31 09:33:00,276-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)-
+org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-[INFO]- 2024-07-31 09:33:00,435-Initialized JPA EntityManagerFactory for persistence unit 'default'-
+org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-[WARN]- 2024-07-31 09:33:01,809-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning-
+org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-[WARN]- 2024-07-31 09:33:02,124-Unable to start LiveReload server-
+org.springframework.boot.web.embedded.tomcat.TomcatWebServer-[INFO]- 2024-07-31 09:33:09,075-Tomcat started on port 9192 (http) with context path '/'-
+com.example.demo.DemoApplication-[INFO]- 2024-07-31 09:33:09,666-Started DemoApplication in 19.753 seconds (process running for 21.03)-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 09:34:25,304-Initializing Spring DispatcherServlet 'dispatcherServlet'-
+org.springframework.web.servlet.DispatcherServlet-[INFO]- 2024-07-31 09:34:25,305-Initializing Servlet 'dispatcherServlet'-
+org.springframework.web.servlet.DispatcherServlet-[INFO]- 2024-07-31 09:34:25,307-Completed initialization in 2 ms-
+org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-[INFO]- 2024-07-31 13:14:45,170-Application shutdown requested.-
+org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-[INFO]- 2024-07-31 13:14:45,269-Closing JPA EntityManagerFactory for persistence unit 'default'-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 13:14:45,287-HikariPool-1 - Shutdown initiated...-
+com.zaxxer.hikari.HikariDataSource-[INFO]- 2024-07-31 13:14:45,299-HikariPool-1 - Shutdown completed.-
+org.apache.catalina.core.StandardService-[INFO]- 2024-07-31 13:14:45,304-Stopping service [Tomcat]-
+org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-[INFO]- 2024-07-31 13:14:45,306-Destroying Spring FrameworkServlet 'dispatcherServlet'-
