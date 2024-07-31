@@ -1,0 +1,51 @@
+<div class="container">
+    <form class="row g-3" [formGroup]="automobileForm" (ngSubmit)="updateAutomobile()">
+
+        <div class="col-md-4">
+            <label for="mkname">Make Name</label>
+            <input formControlName="make" [(ngModel)] = "automobile.make" type="text" class="form-control" id="mkname" placeholder="Make Name">
+            <div style="color:red">
+                <span  *ngIf="make && make.invalid && make.touched">
+                    Please enter a Make name </span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="prc">Price</label>
+            <input formControlName="price" [(ngModel)] = "automobile.price" type="number" class="form-control" id="prc" placeholder="Price">
+            <div style="color:red" >
+
+                {{checkPrice}}
+                <span *ngIf="price && price.invalid && price.touched">
+                    Please enter a Price</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="mdl">Model</label>
+            <input formControlName="model" [(ngModel)] = "automobile.model" type="text" class="form-control" id="mdl" placeholder="Model Name">
+            <div>
+                <span style="color:red" *ngIf="model && model.invalid && model.touched">
+                    Please enter a Model</span>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <label for="yrr">Year</label>
+            <input formControlName="year" [(ngModel)] = "automobile.year" type="number" class="form-control" id="yrr" placeholder="Year">
+            <div>
+                {{checkYear}}
+                <span style="color:red" *ngIf="year && year.invalid && year.touched">
+                    Please enter a Year</span>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-12">
+            <button (click)="check()" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+
+</div>

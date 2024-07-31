@@ -1,0 +1,45 @@
+<div class="container">
+  <legend>Edit Customer</legend>
+  <form #customerFormRef="ngForm" (ngSubmit)="update()">
+    <div class="mb-3">
+      <label for="txtName" class="form-label">Name</label>
+      <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="customerForm.name" required
+        #name="ngModel" class="form-control" id="txtName" />
+      <div *ngIf="name.invalid && name.touched" class="text-danger">
+        Name is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="txtEmail" class="form-label">Email</label>
+      <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="customerForm.email" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required email="email" #email="ngModel"
+        class="form-control" id="txtEmail" />
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">Please enter a valid email</div>
+        <div *ngIf="email?.errors?.['pattern']">Email must be a valid format including domain (e.g.,example&#64;gmail.com).</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="txtPhone" class="form-label">Phone No</label>
+      <input type="tel" name="phone" placeholder="Enter your phone number" [(ngModel)]="customerForm.phone" required
+        pattern="^[0-9]+$" required minlength="10" #phone="ngModel" class="form-control" id="txtPhone" />
+      <div *ngIf="phone.invalid && phone.touched" class="text-danger">
+        <div *ngIf="phone.errors?.['required']">Phone number is required</div>
+        <div *ngIf="phone?.errors?.['pattern']">Invalid phone number.</div>
+        <div *ngIf="phone?.errors?.['minlength']">Phone number must be at least 10 digits.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="customerFormRef.invalid">Update</button>
+
+    <div [ngStyle]="{'color':'red'}">
+      {{logError}}
+    </div>
+  </form>
+</div>
+
+
+

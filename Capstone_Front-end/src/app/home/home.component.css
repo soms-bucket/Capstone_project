@@ -1,0 +1,50 @@
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+  }
+
+  .feature-wrapper {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  
+  .card-deck .card {
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    transition: transform 0.2s;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .section-space--ptb_90 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+ 
+  .container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+ 

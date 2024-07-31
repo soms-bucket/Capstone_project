@@ -1,0 +1,74 @@
+<div class="container">
+  <h4>Create Maintenance Record</h4>
+  <form #maintenanceForm="ngForm" (ngSubmit)="saveMaintenance()" class="row g-3">
+
+    <div class="col-md-6">
+      <label for="aid">Automobile ID</label>
+      <!-- <input type="number" [(ngModel)]="newMaintenance.automobileId" name="automobileId" class="form-control" required> -->
+
+      <select #automobileId="ngModel" ngModel required class="form-control" name="auid"
+        [(ngModel)]="newMaintenance.automobileId" id="aid">
+
+        <option *ngFor="let aid of autoList" [value]="aid.id">{{aid.id }} - {{aid.make}} </option>
+
+      </select>
+      <div *ngIf="automobileId.invalid && automobileId.touched" style="color: red"> Please select Automobile Id</div>
+
+
+    </div>
+
+    <div class="col-md-6">
+
+      <label for="date">Date</label>
+      <input #date="ngModel" ngModel required type="date" [(ngModel)]="newMaintenance.date" name="date"
+        class="form-control" id="date">
+      <div *ngIf="date.invalid && date.touched" style="color: red"> Please select date</div>
+
+    </div>
+
+    <div class="col-md-6">
+      <label for="des">Description</label>
+      <input type="text" #description="ngModel" ngModel required [(ngModel)]="newMaintenance.description"
+        name="description" class="form-control" id="des">
+      <div *ngIf="description.invalid && description.touched" style="color: red"> Please select Description </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" [disabled]="maintenanceForm.invalid" class="btn btn-success">Create</button>
+      &nbsp;&nbsp;&nbsp;
+      <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+
+</div>
+
+
+
+
+
+
+<!-- <div *ngIf="selectedMaintenance" class="mt-4">
+    <h3>{{ selectedMaintenance.id ? 'Edit' : 'Create' }} Maintenance Record</h3>
+    <form (ngSubmit)="saveMaintenance()">
+      <div class="form-group">
+          <label for="automobileId">ID</label>
+          <input type="number" [(ngModel)]="selectedMaintenance.id" name="automobileId" class="form-control" required>
+        </div>
+      <div class="form-group">
+        <label for="automobileId">Automobile ID</label>
+        <input type="number" [(ngModel)]="selectedMaintenance.automobileId" name="automobileId" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" [(ngModel)]="selectedMaintenance.date" name="date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="selectedMaintenance.description" name="description" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">{{ selectedMaintenance.id ? 'Update' : 'Create' }}</button>
+      <button type="button" (click)="clearSelection()" class="btn btn-secondary">Cancel</button>
+    </form>
+  </div>
+
+  <button (click)="createNewMaintenance()" class="btn btn-success">Create </button>
+ -->

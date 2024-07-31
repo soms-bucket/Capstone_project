@@ -1,0 +1,34 @@
+<div class="container">
+<h3>Customer List</h3>
+<div class="row mt-2 justify-content-center">
+  <div class="col-auto">
+    <a class="btn btn-primary" routerLink="/add-customer">Add New Customer</a>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr style="background: rgb(0, 128, 255)">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of customers">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.phone}}</td>
+      <td>
+        <td>
+          <!-- <button type="button" class="btn btn-info" [routerLink]="['/list-order', c.id]">Order</button>  &nbsp;&nbsp;&nbsp; -->
+          <button type="button" class="btn btn-warning" [routerLink]="['/edit-customer', c.id]">Edit</button>  &nbsp;&nbsp;&nbsp;
+         <button type="button" class="btn btn-danger" (click)="delete(c.id)" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span *ngIf = "customers.length == 0" class="text-danger"> No records found </span>
+
+</div>

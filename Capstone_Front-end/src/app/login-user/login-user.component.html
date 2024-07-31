@@ -1,0 +1,162 @@
+<!-- 
+<div class="container" *ngIf="!setShow()">
+    <legend>Log In</legend>
+    <form class="row g-3" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            Username:
+            <input type="text" placeholder="Enter username" formControlName="user" class="form-control"><br>
+
+            <span style="color:red" *ngIf="user && user.invalid && user.touched">
+                Please enter a Valid username </span>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            Password: <input type="password" placeholder="Enter password" formControlName="pass" class="form-control">
+            <span style="color:red" *ngIf="pass && pass.invalid && pass.touched">
+                Please enter a Valid password </span>
+        </div>
+        <div class="col-12">
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success">Login</button>
+        </div>
+        <div *ngIf="logError.length != 0" class="text-danger"> {{logError}} </div>
+    </form>
+    <br>
+    <button (click)="enableSignUp()" class="btn btn-info">Create a user</button>
+</div> -->
+
+<div class="container-fluid ps-md-0" >
+    <div class="row g-0">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"> 
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" alt="">
+      </div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto" *ngIf="!setShow()">
+                <h3 class="login-heading mb-4">Welcome back!</h3>
+  
+                <!-- Sign In Form -->
+                <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                  <div class="form-floating mb-3">
+                      <input type="text" id="floatingInput" placeholder="Enter username" formControlName="user" class="form-control"><br>
+  
+                      <span style="color:red" *ngIf="user && user.invalid && user.touched">
+                          Please enter a Valid username </span>
+                    <label for="floatingInput">Email address</label>
+  
+                  </div>
+                  <div class="form-floating mb-3">
+  
+                    <input type="password" id="floatingPassword" placeholder="Enter password" formControlName="pass" class="form-control">
+                    <span style="color:red" *ngIf="pass && pass.invalid && pass.touched">Please enter a Valid password </span>
+                    <label for="floatingPassword">Password</label>
+                  </div>
+  
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                    <label class="form-check-label" for="rememberPasswordCheck">
+                      Remember password
+                    </label>
+                  </div>
+  
+                  <div class="d-grid">
+                    <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                    <div *ngIf="logError.length != 0" class="text-danger"> {{logError}} </div>
+                    <div class="text-center">
+                      Don't have an account?
+                      <a (click)="enableSignUp()" class="text-danger"  ><strong>Register</strong></a>
+                    </div>
+                  </div>
+  
+                </form>
+              </div>
+
+              <div class="col-md-9 col-lg-8 mx-auto" *ngIf="setShow()">
+
+                <h3 class="login-heading mb-4">Sign Up</h3>
+                <form  [formGroup]="regis" (ngSubmit)="createUser()">
+
+                    <!-- < Sign up form> -->
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="name" placeholder="name" class="form-control" id="txtName"/>
+                        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-danger">
+                            <div *ngIf="name?.errors?.['required']">Name is required.</div>
+                        </div>
+                        <label for="txtName" class="form-label">Name</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="username" placeholder="username" class="form-control" id="txtUsername" />
+                        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="text-danger">
+                            <div *ngIf="username?.errors?.['required']">Username is required.</div>
+                        </div>
+                        <label for="txtUsername" class="form-label">Username</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        
+                        <input type="email" formControlName="email" placeholder="email" class="form-control" id="txtEmail" />
+                        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+                            <div *ngIf="email?.errors?.['required']">Email is required.</div>
+                            <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+                            <div *ngIf="email?.errors?.['pattern']">Email must be a valid format including domain (e.g., example&#64;gmail.com).</div>
+                        </div>
+                        <label for="txtEmail" class="form-label">Email</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        
+                        <input type="password" formControlName="password" placeholder="pass" class="form-control" id="txtPassword" />
+                        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
+                            <small *ngIf="password?.errors?.['required']">Password is required.</small>
+                            <small *ngIf="password?.errors?.['minLength']">Password must be at least 6 characters long.</small>
+                            <!-- <small *ngIf="password?.errors?.['pattern']">
+                              It contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+                            </small> -->
+                        </div>
+                        <label for="txtPassword" class="form-label">Password</label>
+                    </div>
+
+
+                    <div class="d-grid">
+                        <button type="submit" [disabled]="regis.invalid" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2">
+                            Sign Up</button>
+                        <div *ngIf="logError.length != 0" class="text-danger"> {{logError}} </div>                    
+                    </div>
+                    
+                   
+                </form>
+                <br>
+                <button (click)="enableLogin()" class="btn btn-success">Login</button>
+            
+            </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

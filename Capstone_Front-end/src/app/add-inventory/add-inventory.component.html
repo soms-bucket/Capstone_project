@@ -1,0 +1,29 @@
+<div class="container">
+  <legend>New Inventory</legend>
+
+
+
+  <form #invenForm="ngForm" class="row g-3">
+
+    <div class="col-md-4">
+      <label for="autoid" class="form-label">AutoMobileId</label>
+      <!-- <input type="number" name="automobileId" [(ngModel)]="inventoryForm.automobileId" class="form-control" id="automobileId" required/> -->
+      <select #autoId="ngModel" ngModel required class="form-control" name="auid" [(ngModel)]="inventoryForm.automobileId" id="autoid">
+
+        <option *ngFor="let aid of autoList" [value]="aid.id">{{aid.id }} - {{aid.make}} </option>
+      </select>
+      <div *ngIf="autoId.invalid && autoId.touched" style="color: red"> Please select AutoMobile Id </div>
+    
+    </div>
+
+    <div class="col-md-4">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input #qnt="ngModel" ngModel required type="number" name="quantity" [(ngModel)]="inventoryForm.quantity" class="form-control" id="quantity"/>
+      <div *ngIf="qnt.invalid && qnt.touched" style="color: red"> Please add  Quantity </div>
+    </div>
+    
+    <div class="col-12">
+      <button [disabled]="invenForm.invalid" type="submit" (click)="create()" class="btn btn-primary">Add Inventory</button>
+    </div>
+  </form>
+</div>

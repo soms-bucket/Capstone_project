@@ -1,0 +1,26 @@
+
+<div class="container">
+    
+    <div *ngIf="selectedMaintenance" class="mt-4">
+        <h3>{{ selectedMaintenance.id ? 'Edit' : 'Create' }} Maintenance Record</h3>
+        <form (ngSubmit)="saveMaintenance()">
+          <!-- <div class="form-group">
+              <label for="automobileId">ID</label>
+              <input type="number" [(ngModel)]="selectedMaintenance.id" name="automobileId" class="form-control" required>
+            </div> -->
+          <!-- <div class="form-group">
+            <label for="automobileId">Automobile ID</label>
+            <input type="number" [(ngModel)]="selectedMaintenance.automobileId" name="automobileId" class="form-control" required>
+          </div> -->
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" [(ngModel)]="selectedMaintenance.date" name="date" class="form-control" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="des">Description</label>
+            <input type="text" [(ngModel)]="selectedMaintenance.description" name="description" id="des" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-success">{{ selectedMaintenance.id ? 'Update' : 'Create' }}</button>
+          <button type="button" (click)="clearSelection()" class="btn btn-secondary">Cancel</button>
+        </form>
+      </div>

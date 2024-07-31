@@ -1,0 +1,72 @@
+<div class="container">
+    <h3 style="text-align: center;">Add Automobile</h3>
+    <form class="row g-3" [formGroup]="automobileForm" (ngSubmit)="addAutomobile()">
+
+        <div class="col-md-4">
+            <label for="mkname">Make Name</label>
+            <input formControlName="make" type="text" class="form-control" id="mkname" placeholder="Make Name">
+            <div>
+                <span style="color:red" *ngIf="make && make.invalid && make.touched">
+                    Please enter a Make name </span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="prc">Price</label>
+            <input formControlName="price" type="number" class="form-control" id="prc" placeholder="Price">
+            <div style="color:red">
+
+                <span *ngIf="price && price.invalid && price.touched">
+                    Please enter valid Price</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="mdl">Model</label>
+            <input formControlName="model" type="text" class="form-control" id="mdl" placeholder="Model Name">
+            <div>
+                <span style="color:red" *ngIf="model && model.invalid && model.touched">
+                    Please enter a Model</span>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <label for="yrr">Year</label>
+            <input formControlName="year" type="number" class="form-control" id="yrr" placeholder="Year">
+            <div style="color:red" >
+
+                <span *ngIf="year && year.invalid && year.touched">
+                    Please enter a valid Year</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- <label for="mId">Manufacturer Id</label>
+            <input formControlName="manufacturerId" type="number" class="form-control" id="mId"
+                placeholder="Mmanufacturer Id">
+            <div>
+                <span style="color:red" *ngIf="manufacturerId && manufacturerId.invalid && manufacturerId.touched">
+                    Please enter a Manufacturer Id</span>
+            </div> -->
+
+            <label for="mid">Manufacturer Id</label>
+
+            <select class="form-control" formControlName="manufacturerId" name="mid">
+
+                <!-- <option value={{aid}}>{{aid}}</option>    (change)="aido(order.automobileId)"-->
+                <option *ngFor="let manf of mlist" [value]="manf.id">{{manf.id}} - {{manf.name}}</option>
+            </select>
+            <div style="color:red">
+                <span *ngIf="manufacturerId && manufacturerId.invalid && manufacturerId.touched">
+                    Please enter a Manufacturer Id</span>
+
+            </div>
+        </div>
+
+        
+        <div class="col-12">
+            <button  [disabled]="automobileForm.invalid" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,68 @@
+<h3 style="text-align: center;">Automobile List</h3>
+
+<div class="container">
+    <div class="mid">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <select class="form-control" name="manufacturerid" [(ngModel)]="mid">
+
+                    <option *ngFor="let cid of mList" [value]="cid.id">{{ cid.id }} - {{cid.name}}</option>
+
+                </select>
+                <button type="button" class="btn btn-info" (click)="callForManufacturer()"> Filter Manufacturer </button>
+            </div>
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                <select class="form-control" name="autoid" [(ngModel)]="year">
+                    <option *ngFor="let cid of yearList" [value]="cid">{{ cid }}</option>
+
+                </select>
+                <button type="button" class="btn btn-info" (click)="callForYear()">Search Year</button>
+            </div>
+
+            <div class="col-12">
+                <button type="button" class="btn btn-success" (click)="reset()">Reset</button>
+            </div>
+            <br>
+        </div>
+
+
+
+        <button class="btn btn-primary" routerLink="/add-automobile">Add Automobile</button>
+    </div>
+
+    <table class="table ">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Make</th>
+                <th scope="col">Price</th>
+                <th scope="col">Model</th>
+                <th scope="col">Year</th>
+                <th scope="col">Manufacturer </th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let auto of automobileList">
+                <th scope="row">{{ auto.id }}</th>
+                <td>{{ auto.make }}</td>
+                <td>{{ auto.price }}</td>
+                <td>{{ auto.model }}</td>
+                <td>{{ auto.year }}</td>
+                <td> {{ automap.get( auto.manufacturerId ) }}</td>
+                <td>
+                    <!-- <a [routerLink]="['/list-order-automobile', auto.id]" class="btn btn-info"> Order </a> &nbsp;&nbsp;&nbsp; -->
+                    <!-- <a [routerLink]="['/list-maintenance', auto.id]"  class="btn btn-dark">Maintenance</a> &nbsp;&nbsp;&nbsp; -->
+                    <a [routerLink]="['/edit-automobile', auto.id]" class="btn btn-warning"> Edit</a> &nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-danger" (click)="delete(auto.id)"> Delete</a> &nbsp;&nbsp;&nbsp;
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <span *ngIf="automobileList.length == 0" class="text-danger"> No records found </span>
+</div>
