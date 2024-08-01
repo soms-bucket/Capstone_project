@@ -1,0 +1,26 @@
+<div class="container">
+  <legend>New Product</legend>
+  <form #manuForm="ngForm">
+    <div class="row g-3">
+      <!-- <div class="mb-3">
+          <label for="txtName" class="form-label text-left">Id</label>
+          <input type="text" name="id" [(ngModel)] = "manufacturerForm.id" class="form-control" id="txtId" />
+      </div> -->
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input #name="ngModel" ngModel required type="text" name="name" [(ngModel)]="manufacturerForm.name" class="form-control" id="txtName" />
+        <div *ngIf="name.invalid && name.touched" style="color: red"> Please Enter a Name</div>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="txtCountry" class="form-label">Country</label>
+        <input #cun="ngModel" ngModel required type="text" name="country" [(ngModel)]="manufacturerForm.country" class="form-control" id="txtCountry" />
+        <div *ngIf="cun.invalid && cun.touched" style="color: red"> Please Enter a Country</div>
+      </div>
+      <div class="col-12">
+        <button type="button" [disabled]="manuForm.invalid" (click)="create()" class="btn btn-primary">New Product</button>
+      </div>
+    </div>
+  </form>
+</div>

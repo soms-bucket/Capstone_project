@@ -1,0 +1,18 @@
+
+<div class="container">
+  <legend>Edit Manufacturer</legend>
+  <form>
+    <div class="mb-3">
+      <label for="txtName" class="form-label">Name</label>
+      <input type="text" name="name" [(ngModel)] = "manufacturerForm.name" class="form-control" id="txtName" />
+    </div>
+    <div class="mb-3">
+      <label for="txtCountry" class="form-label">Country</label>
+      <input type="text" name="country" [(ngModel)] = "manufacturerForm.country" class="form-control" id="txtCountry" />
+    </div>
+    
+
+    <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    <!-- <button type="button" (click)="delete()" class="btn btn-danger">Delete</button> -->
+  </form>
+</div>

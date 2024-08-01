@@ -1,0 +1,55 @@
+<h3 style="text-align: center;">Order List</h3>
+
+<div class="container">
+
+    <div class="mid">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <select class="form-control" name="cusid" [(ngModel)]="cusId">
+
+                    <option *ngFor="let cid of cIdList" [value]="cid.id">{{ cid.id }} - {{cid.name}}</option>
+                </select>
+                <button type="button" class="btn btn-info" (click)="callForCustomer()">Filter Customer</button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <select class="form-control" name="autoid" [(ngModel)]="autoId">
+
+                    <option *ngFor="let aid of aIdList" [value]="aid.id">{{ aid.id }} - {{aid.make}}</option>
+                </select>
+                <button type="button" class="btn btn-info" (click)="callForAutoMobile()">Filter Automobile</button>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-success" (click)="reset()">Reset</button>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" routerLink="/add-order">Add Order</button>
+    </div>
+    <table class="table ">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Customer Id</th>
+                <th scope="col">Automobile Id</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let ord of orderList">
+                <th scope="row">{{ ord.id }}</th>
+                <td>{{ ord.date }}</td>
+                <td>{{ ord.customerId }} </td>
+                <td>{{ ord.automobileId }}</td>
+                <td>
+                    <!-- <a [routerLink]="['/edit-order', ord.id]" class="btn btn-warning"> Edit</a> &nbsp;&nbsp;&nbsp; -->
+                    <a class="btn btn-danger" (click)="delete(ord.id)"> Delete</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <span *ngIf = "orderList.length == 0" class="text-danger"> No records found </span>
+</div>

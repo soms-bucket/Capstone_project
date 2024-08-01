@@ -1,0 +1,54 @@
+<div class="container">
+    <h3>Add Order</h3>
+
+    <form #orderForm="ngForm" class="row g-3">
+
+
+        <div class="col-md-6">
+
+            <label for="cid">Customer Id</label>
+
+            <select #customerId="ngModel" ngModel required class="form-control" name="cusid"
+                [(ngModel)]="order.customerId">
+                <!-- (change)="cusdo(order.customerId)"> -->
+
+                <!-- <option value={{cid}}>{{cid}}</option> -->
+                <option *ngFor="let cid of cIdList" [value]="cid.id">{{ cid.id }} - {{cid.name}}</option>
+
+            </select>
+
+            <div *ngIf="customerId.invalid && customerId.touched" style="color: red"> Please select Customer Id </div>
+
+
+
+            <div class="col-md-4">
+                <label for="aid">Automobile Id</label>
+
+                <select #automobileId="ngModel" ngModel required class="form-control" name="auid"
+                    [(ngModel)]="order.automobileId">
+                    <!-- (change)="aido(order.automobileId)"> -->
+
+                    <!-- <option value={{aid}}>{{aid}}</option> -->
+                    <option *ngFor="let aid of aIdList" [value]="aid.id">{{aid.id }} - {{aid.make}} </option>
+
+                </select>
+            </div>
+            <div *ngIf="automobileId.invalid && automobileId.touched" style="color: red"> Please select Automobile Id</div>
+
+
+
+            <div class="col-12">
+                <br>
+                <button [disabled]="orderForm.invalid" type="submit" (click)="create()"
+                    class="btn btn-primary">Sumbit</button>
+            </div>
+
+
+        </div>
+    </form>
+
+</div>
+
+
+<!-- 
+<select><option *ngFor="let item of items" [value]="item.id">{{ item.name }}</option></select> -->

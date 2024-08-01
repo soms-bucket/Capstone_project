@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>Inventory List</h3>
+  <div class="row mt-2 justify-content-center">
+    <div class="col-auto">
+      <a class="btn btn-primary" routerLink="/add-inventory">Add New Inventory</a>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr style="background: rgb(0, 128, 255)">
+        <th>ID</th>
+        <th>AutoMobileId</th>
+        <th>Quantity</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inventory of inventories">
+        <td>{{ inventory.id }}</td>
+        <td>{{ inventory.automobileId }}</td>
+        <td>{{ inventory.quantity }}</td>
+        <td>
+          <button type="button" class="btn btn-warning" [routerLink]="['/edit-inventory', inventory.id]">Edit</button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger" (click)="delete(inventory.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span *ngIf = "inventories.length == 0" class="text-danger"> No records found </span>
+</div>

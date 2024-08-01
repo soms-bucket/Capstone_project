@@ -1,0 +1,27 @@
+ <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div>
+        <a routerLink="home" mat-button>
+          <h4>Automobile Management</h4>
+        </a>
+      </div>
+      <div style="padding: 20%;">
+        <a routerLink="login" mat-button>Login</a>
+        <span *ngIf="setShow()">
+          <a routerLink="list-automobile" mat-button>Automobiles</a>
+          <a routerLink="list-manufacturer" mat-button>Manufacturer</a>
+          <a routerLink="list-order" mat-button>Orders</a>
+          <button mat-button [matMenuTriggerFor]="menu" igxButton="outlined">Profile</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="list-customer">Customers</button>
+            <button mat-menu-item routerLink="record">Records</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click) = "doLogot()">Logout</button>
+          </mat-menu>
+        </span>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

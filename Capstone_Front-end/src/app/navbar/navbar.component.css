@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #b7e8eb;
+}
+
+
+#navbarNav{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.nav-item{
+    font-size: 17px;
+}
+
+.active-link {
+    font-weight: bold;
+    
+  }
+
+  .mat-toolbar-row a.active-link {
+    border-bottom: 2px solid #0d6efd; /* Add a border to the active link */
+  }

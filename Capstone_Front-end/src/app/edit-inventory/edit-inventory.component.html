@@ -1,0 +1,17 @@
+
+<div class="container">
+  <legend>Edit Inventory</legend>
+  <form>
+    <!-- <div class="mb-3">
+      <label for="txtAutomobileId" class="form-label">AutoMobileId</label>
+      <input type="number" name="automobileId" [(ngModel)] = "inventoryForm.automobileId" class="form-control" id="txtAutomobileId" />
+      
+    </div> -->
+    <div class="mb-3">
+      <label for="txtQuantity" class="form-label">Quantity</label>
+      <input type="number" name="quantity" [(ngModel)] = "inventoryForm.quantity" class="form-control" id="txtQuantity" />
+    </div>
+    <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
+    <!-- <button type="button" (click)="delete()" class="btn btn-danger">Delete</button> -->
+  </form>
+</div>

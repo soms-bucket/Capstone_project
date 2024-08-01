@@ -1,0 +1,41 @@
+
+<div class="container">
+  <legend>New Customer</legend>
+  <form [formGroup]="customerForm" (ngSubmit)="create()">
+      <!-- <div class="mb-3">
+          <label for="txtName" class="form-label text-left">Id</label>
+          <input type="text" name="id" [(ngModel)] = "productForm.id" class="form-control" id="txtId" />
+      </div> -->
+    <div class="mb-3">
+      <label for="txtName" class="form-label">Name</label>
+      <!-- <input type="text" name="name" [(ngModel)] = "customerForm.name" class="form-control" id="txtName" /> -->
+      <input type="text" formControlName="name" class="form-control" id="txtName" />
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-danger">
+        <div *ngIf="name?.errors?.['required']">Name is required.</div>
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="txtEmail" class="form-label">Email</label>
+      <!-- <input type="email" name="email" [(ngModel)] = "customerForm.email" class="form-control" id="txtEmail" /> -->
+      <input type="email" formControlName="email" class="form-control" id="txtEmail" />
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+        <div *ngIf="email?.errors?.['required']">Email is required.</div>
+        <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+        <div *ngIf="email?.errors?.['pattern']">Email must be a valid format including domain (e.g., example&#64;gmail.com).</div>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="txtPhone" class="form-label">Phone No</label>
+        <!-- <input type="text" name="phone" [(ngModel)] = "customerForm.phone" class="form-control" id="txtPhone" /> -->
+        <input type="text" formControlName="phone" class="form-control" id="txtPhone" />
+      <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="text-danger">
+        <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+        <div *ngIf="phone?.errors?.['pattern']">Invalid phone number.</div>
+        <div *ngIf="phone?.errors?.['minlength']">Phone number must be at least 10 digits.</div>
+      </div>
+      </div>
+
+    <button type="submit" class="btn btn-primary">New Customer</button>
+  </form>
+</div>
